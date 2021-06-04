@@ -1,0 +1,6 @@
+<p>Ejemplo:</p>   
+const promesa = new Promise((resolve, reject) => { reject(); });
+
+promesa.then(() => { alert("Exito!"); });
+
+promesa.catch(() => { alert("No funciono!"); });
