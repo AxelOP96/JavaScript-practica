@@ -76,4 +76,23 @@ Los objetos se componen por propiedades y valores, se utiliza ’,' para separar
         //para pasar el numero a string y que devuelva 3 decimales usamos el .toFixed indicando los decimales a tomar en cuenta
         var totalStr = total.toFixed(3);
         //para volver leer los decimales usamos parseFloat que transforma el string
-        var total2 = parseFloat();
+        //var total2 = parseFloat();*/
+
+        //do while
+        let i = 0;
+        do {
+            const dog = dogs[i];
+        const dogData = document.createElement('div');
+        dogData.classList.add('jumbotron', 'text-center');
+        dogData.innerText = `${dog.name} is a ${dog.type}`;
+        DOMStringList.appendChild(dogData);
+
+        i++;
+        } while (i < dogs.length);
+        //for of
+        for (let dog of dogs) {
+        const dogData = document.createElement('div');
+        dogData.classList.add('jumbotron', 'text-center');
+        dogData.innerText = `${dog.name} is a ${dog.type}`;
+        DOMStringList.appendChild(dogData);
+        }
