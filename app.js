@@ -82,12 +82,12 @@ Los objetos se componen por propiedades y valores, se utiliza ’,' para separar
         let i = 0;
         do {
             const dog = dogs[i];
-        const dogData = document.createElement('div');
-        dogData.classList.add('jumbotron', 'text-center');
-        dogData.innerText = `${dog.name} is a ${dog.type}`;
-        DOMStringList.appendChild(dogData);
+            const dogData = document.createElement('div');
+            dogData.classList.add('jumbotron', 'text-center');
+            dogData.innerText = `${dog.name} is a ${dog.type}`;
+            DOMStringList.appendChild(dogData);
 
-        i++;
+            i++;
         } while (i < dogs.length);
         //for of
         for (let dog of dogs) {
