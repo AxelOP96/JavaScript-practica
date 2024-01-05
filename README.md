@@ -23,20 +23,25 @@ Si bien se dice que JS es **interpretado** porque se lee de arriba abajo y linea
 el programa “on the fly” e inmediatamente corre el código compilado.
 ## Output
 
-Para relacionar un documento Javascript desde una página web, igual que antes, utilizaremos la etiqueta <script>, sólo que en este caso, haremos referencia al archivo Javascript con un atributo src (source)
-<script src="js/index.js"></script>
-la etiqueta <script> está situada dentro de la etiqueta <head> de la página, es decir, en la cabecera de metadatos. Esto significa que la página web descargará el archivo Javascript antes de empezar a dibujar el contenido de la página (etiqueta <body>).
-
-Para poder ver/probar código, podemos usar herramientas como **console.log** y **alert**... estas, no son parte de Javascript, sino que se encuentran en la API que exponen los motores de JavaScript en cada navegador, mediante el scope global en *window*
-console.log()	Muestra la información proporcionada en la consola Javascript.
-console.info()	Equivalente al anterior. Se utiliza para mensajes de información.
-console.warn()	Muestra información de advertencia. Aparece en amarillo.
-console.error()	Muestra información de error. Aparece en rojo.
-console.clear()	Limpia la consola. Equivalente a pulsar ctrl + l o escribir clear().
+    Para relacionar un documento Javascript desde una página web, igual que antes, utilizaremos la etiqueta <script>, sólo que en este caso, haremos referencia al archivo 
+    Javascript con un atributo src (source)
+    <script src="js/index.js"></script>
+    la etiqueta <script> está situada dentro de la etiqueta <head> de la página, es decir, en la cabecera de metadatos. Esto significa que la página web descargará el
+    archivo
+    Javascript antes de empezar a dibujar el contenido de la página (etiqueta <body>).
+    
+    Para poder ver/probar código, podemos usar herramientas como **console.log** y **alert**... estas, no son parte de Javascript, sino que se encuentran en la API que 
+    exponen los motores de JavaScript en cada navegador, mediante el scope global en *window*
+    console.log()	Muestra la información proporcionada en la consola Javascript.
+    console.info()	Equivalente al anterior. Se utiliza para mensajes de información.
+    console.warn()	Muestra información de advertencia. Aparece en amarillo.
+    console.error()	Muestra información de error. Aparece en rojo.
+    console.clear()	Limpia la consola. Equivalente a pulsar ctrl + l o escribir clear().
 
 ## Input
 
-Como recibimos información del usuario? Para hacer pruebas podemos utilizar **prompt.** Aunque la manera más común que conocemos todos, es ingresando información en un input de un formulario HTML.
+Como recibimos información del usuario? Para hacer pruebas podemos utilizar **prompt.** Aunque la manera más común que conocemos todos, es ingresando información en 
+un input de un formulario HTML.
 
 
 
@@ -104,7 +109,138 @@ Como recibimos información del usuario? Para hacer pruebas podemos utilizar **p
     Operador RIGHT SHIFT	a >> b	Desplazamiento de bits hacia la derecha. Ej: 11 (3) pasa a 1 (1).
     Operador RIGHT SHIFT sin signo	a >>> b	Desplazamiento de bits hacia la derecha, como un operador sin signo.
 
+    Concatenación de texto	a + b	Une el contenido de a con el contenido de b
+    Conversión a número (Suma unaria)	+a	Si a no es un número, intenta convertirlo en un número.
+    al incluir el operador unario + previo a la variable, forzamos a convertirlo a número (o a su forma de representarse numéricamente).
+
+    Operador Nullish coalescing
+    El operador nullish coalescing  (unión nula) es un operador lógico muy similar al operador OR, pero con ciertos matices y cambios. A grandes rasgos, se puede decir que 
+    el operador a ?? b devuelve b sólo cuando a es undefined o null. Al contrario que el operador OR, con valores como false, 0 o "", no devuelve b.
     
+    Veamoslo con un ejemplo para ver la diferencia con el anterior:
+    
+    JS
+    42 || 50          // 42
+    42 ?? 50          // 42 (ambos se comportan igual)
+    false || 50       // 50 (false es un valor falsy, devuelve el segundo)
+    false ?? 50       // false (la parte izquierda no es null ni undefined, devuelve el primero)
+    0 || 50           // 50 (0 es un valor falsy, devuelve el segundo)
+    0 ?? 50           // 0 (la parte izquierda no es null ni undefined, devuelve el primero)
+    null || 50        // 50 (null es un valor falsy, devuelve el segundo)
+    null ?? 50        // 50 (devuelve el segundo)
+    undefined || 50   // 50 (undefined es un valor falsy, devuelve el segundo)
+    undefined ?? 50   // 50 (devuelve el segundo)
+
+    const data = { ammo: 0 }
+    data.ammo || "Sin balas";     // "Sin balas"
+    data.ammo ?? "Sin balas";     // 0
+    
+    const data = {}
+    data.ammo || "Sin balas";     // "Sin balas"
+    data.ammo ?? "Sin balas";     // "Sin balas"
+    
+    Ten en cuenta que en el segundo caso, la propiedad ammo es undefined, ya que no está definida.
+
+    Asignación lógica nula
+    Este operador es bastante interesante para algunas operaciones muy frecuentes en Javascript. Existen ciertos casos donde, si una variable tiene valores null o 
+    undefined (valores nullish) y sólo en esos casos, queremos cambiar su valor. Veamos como se haría sin utilizar la asignación lógica nula y como podríamos resumirlo
+    utilizándola:
+    
+    JS
+    // Sin asignación lógica nula
+    if (x === null || x === undefined) {
+      x = 50;
+    }
+    
+    // Con asignación lógica nula
+    x ??= 50;
+    
+    Recuerda que a ??= b es equivalente a a ?? (a = b). Esto puede ser super útil para simplificar casos como el siguiente:
+    const resetConfig = (data) => {
+      data.life ??= 100;
+      data.level ??= 1;
+      return data;
+    }
+    
+    resetConfig({ life: 25, level: 4 });      // { life: 25, level: 4 }
+    resetConfig({ life: null, level: 2 });    // { life: 100, level: 2 }
+    resetConfig({}); // { life: 100, level: 1 }
+    
+    Observa que la función resetConfig() obtiene un objeto por parámetro y en el caso de tener una de las propiedades life o level a null o no existir (o valer undefined),
+    las reseteará al valor indicado.
+    
+    Encadenamiento opcional
+
+    Existe un operador muy interesante denominado optional chaining  (operador de encadenamiento opcional). Este operador nos permite acceder a propiedades, aunque 
+    su elemento padre no exista, de forma que podamos evitar un error que es bastante frecuente.
+
+    Veámoslo con un ejemplo, para situarnos mejor. Tenemos el siguiente objeto:
+    
+    JS
+    const user = {
+      name: "Manz",
+      role: "streamer",
+      attrs: {
+        life: 100,
+        power: 25
+      }
+    }
+    
+    Si intentamos acceder a una de sus propiedades en el interior de attrs lo haremos sin problema:
+    
+    JS
+    user.attrs.power     // 25
+    user.attrs.life      // 100
+    
+    Sin embargo, vamos a imaginar que la propiedad attrs (y todo su contenido) no existe aún, sino que tenemos un objeto user que solo tiene las propiedades name y role,
+    pero que en algún momento de nuestro código esta propiedad attrs se añadirá en nuestro objeto.
+    
+    Si intentamos acceder a una de sus propiedades sin que la propiedad attrs exista, ocurriría lo siguiente:
+    
+    JS
+    user.attrs.power     // TypeError: Cannot read properties of undefined (reading 'power')
+    user.attrs.life      // TypeError: Cannot read properties of undefined (reading 'life')
+    
+    user.attrs && user.attrs.life   // Evitamos el error (comprobamos si existe attrs antes)
+    
+    Esto ocurre porque estamos intentando acceder a la propiedad power o life dentro de una propiedad attrs que no está definida, es decir, que es undefined. Dicho de otro
+    modo, estamos intentando hacer un undefined.power o un undefined.life.
+    
+    Para evitar esto, hasta ahora teníamos que utilizar un if condicional, un operador lógico AND o alguna forma similar que comprobara antes que attrs existe realmente, 
+    volviendolo bastante engorroso si tenemos múltiples objetos anidados uno dentro de otro. Ahora podemos utilizar el optional chaining, que no es más que añadir una 
+    ? antes del punto de la propiedad a la que queremos acceder:
+    
+    JS
+    user.attrs?.power    // undefined
+    user.attrs?.life     // undefined
+    
+    Como puedes ver, ahora podemos hacer el intento de acceso sin que nos lance un error. Nos devuelve undefined porque no está definido, pero podemos acceder de forma
+    segura.
+
+    Operador lógico NOT
+    El operador lógico NOT es un operador unario que se utiliza para negar un valor, es decir, para invertir su valor . Si una variable vale true, al negarla valdrá false 
+    y si una variable vale false, al negarla, valdrá false. Para negar una variable, se precede del símbolo !.
+    
+    Veamos algunos ejemplos:
+    
+    JS
+    !true        // false
+    !false       // true
+    !!true       // true
+    !!false      // false
+    !!!true      // false
+
+    Operador coma
+    Quizás, puede parecer el más extraño de todos, ya que no se suele usar demasiado de forma individual, pero en algunos contextos es muy utilizado. El operador coma    
+    se utiliza simplemente para realizar varias operaciones o sentencias en una misma linea, separándolas por comas. Veamos un ejemplo muy sencillo:
+    
+    JS
+    // Sin operador coma
+    const a = 5;
+    const b = 10;
+    
+    // Con operador coma
+    const a = 5, b = 10;
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -316,19 +452,19 @@ funcion nombre();
     Por otro lado, en la segunda función, donde se utiliza una función flecha, el this no devuelve el objeto padre de la función, sino que devuelve Window.
 
     padre = {
-  a: function () {
-    console.log(this);
-  },
-  b: () => {
-    console.log(this);
-  },
-};
+      a: function () {
+        console.log(this);
+      },
+      b: () => {
+        console.log(this);
+      },
+    };
 
-padre.a(); // padre
-padre.b(); // Window
+    padre.a(); // padre
+    padre.b(); // Window
 
-Esta es una diferencia clave que hay que tener bien en cuenta a la hora de trabajar con las funciones flecha. Una buena práctica es utilizar funciones tradicionales 
-como las funciones de primer nivel y, luego, en su interior o en callbacks, utilizar funciones flecha.
+    Esta es una diferencia clave que hay que tener bien en cuenta a la hora de trabajar con las funciones flecha. Una buena práctica es utilizar funciones tradicionales 
+    como las funciones de primer nivel y, luego, en su interior o en callbacks, utilizar funciones flecha.
     
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -338,6 +474,54 @@ como las funciones de primer nivel y, luego, en su interior o en callbacks, util
 
 *7-Built-in Objects:
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+*8-Numbers:
+    // Notación literal (preferida)
+    const number = 4;
+    const decimal = 15.8;
+    const legibleNumber = 5_000_000;
+    
+    // Notación con objetos (evitar)
+    const number = new Number(4);
+    const decimal = new Number(15.8);
+    const letter = new Number("A");
+    
+    Observa que los números con decimales, en Javascript los separamos con un punto ( . ), mientras que de forma opcional, podemos utilizar el guión bajo ( _ ) para separar
+    visualmente y reconocer las magnitudes que usamos, teniendo en cuenta que para Javascript es lo mismo:
+    
+    JS
+    5_000_000 === 5000000;    // true
+    
+    Cualquier parámetro pasado al new Number() que no sea un número (por ejemplo, la "A"), dará como resultado un valor NaN (Not A Number)
+    cuando trabajamos con datos numéricos, es posible que ciertos números no se puedan representar exactamente, y no sean tan precisos como nos gustaría. Esto ocurre porque
+    se guardan en un formato llamado coma flotante de doble precisión.
+    Existe una serie de constantes definidas en relación a este tema, que marcan los límites mínimo o máximo. Veamos cuales son y su significado:
+
+    Constante	                Valor en Javascript	    Descripción
+    Number.MAX_VALUE	        ~ 21024	                Valor más grande
+    Number.MIN_VALUE	        ~ 5×10-324	            Valor más pequeño
+    Number.MAX_SAFE_INTEGER 	253-1	                Valor seguro más grande
+    Number.MIN_SAFE_INTEGER 	-(253-1)	            Valor seguro más pequeño
+    Number.EPSILON 	            2-52	                Número muy pequeño: ε
+
+    Constante	                Valor en Javascript	Descripción
+    Number.POSITIVE_INFINITY	Infinity	        Infinito positivo: +∞
+    Number.NEGATIVE_INFINITY	-Infinity	        Infinito negativo: -∞
+    
+    Representación numérica
+    En Javascript tenemos dos formas de representar los números: la notación exponencial (basada en potencias de 10) y la notación de punto fijo (una cantidad de dígitos
+    para la parte entera, y otra para la parte decimal).
+    
+    Podemos cambiar entre ellas utilizando los siguientes métodos:
+    
+    Método	Descripción
+     .toExponential(digits)	Convierte el número a notación exponencial con digits decimales.
+     .toFixed(digits)	Convierte el número a notación de punto fijo con digits decimales.
+     .toPrecision(size)	Utiliza size dígitos de precisión en el número.
+
+     
+    
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 *SCOPE
