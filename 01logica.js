@@ -6,7 +6,7 @@
 function contarCaracteres(cadena){
     let count = 0;
     try{
-        if(typeof(cadena) === String){
+        if(typeof(cadena) === "string"){
             count = cadena.length;
         }
             
@@ -15,7 +15,7 @@ function contarCaracteres(cadena){
         console.log(error);
     }
     
-    return cadena.length;
+    return count;
 }
 console.log("Ejercicio 1");
 let texto = "Hola mundo";
