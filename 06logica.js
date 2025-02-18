@@ -29,7 +29,6 @@ const validarNombreValido = (nombre="") =>{
 }
 console.log(validarNombreValido("Axel Daniel"));
 
-console.log(validarNombreValido())
 console.log("Ejercicio 20");
 const validarEmailValido= (mail="") =>{
     if(!mail){ return console.warn("La cadena está vacia")}
