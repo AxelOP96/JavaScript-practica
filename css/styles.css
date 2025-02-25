@@ -1,12 +1,13 @@
 *{
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 nav{
     background-color: yellow;
     padding: 2rem;
 }
-h1{
+h1, h2{
     text-align: center;
 }
 .hamburger {
@@ -115,5 +116,33 @@ h1{
     justify-content: flex-end;
     align-content: flex-end;
     align-items: flex-end;
-    margin-top: 79vh;
+    margin-bottom: 1vh;
 }  
+.d-none{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.opacity{
+    
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+ul{
+    list-style: none;
+}
+ul{
+    padding: 0;
+}
+ul li{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: large;
+    padding: 2rem;
+    margin: 2.5rem;
+}
+ul li:hover{
+    background-color: yellow;
+}
