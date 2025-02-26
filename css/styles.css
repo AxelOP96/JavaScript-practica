@@ -1,15 +1,39 @@
 *{
     margin: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+    
 }
-nav{
+*,
+*:before,
+*:after{
+  box-sizing: inherit;
+}
+html{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body{
+  overflow-x: hidden;
+  margin: 0;
+}
+header{
     background-color: yellow;
-    padding: 2rem;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
 }
 h1, h2{
     text-align: center;
 }
+section{
+  padding: 2rem;
+  padding-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  min-height: 90vh;
+  text-align: center;
+}
+
 .hamburger {
     padding: 15px 15px;
     display: inline-block;
@@ -111,38 +135,58 @@ h1, h2{
       top: 0;
       transform: rotate(90deg);
       transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1); }
-.hamb{
-    display: flex;
-    justify-content: flex-end;
-    align-content: flex-end;
-    align-items: flex-end;
-    margin-bottom: 1vh;
-}  
-.d-none{
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
+.panel{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 998;
+  width: 100%;
+  background-color: rgba(34, 34, 34, 0.85);
+  transition: transform 0.3s ease;
+  /*De arriba*/
+  transform: translate(0, -100%);
 }
-.opacity{
-    
-    background-color: rgba(0, 0, 0, 0.5);
-    
+.panel.is-active{
+  transform: translate(0, 0);
 }
-ul{
-    list-style: none;
+
+nav{
+  padding: 2rem;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
 }
-ul{
-    padding: 0;
-}
-ul li{
-    text-align: center;
+nav a{
+  width: inherit;
+  display: block;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+    text-decoration: none;
     text-transform: uppercase;
     font-size: large;
-    padding: 2rem;
-    margin: 2.5rem;
+    color: yellow;
+    padding: 2rem 0;
 }
-ul li:hover{
+nav a:hover{
     background-color: yellow;
+    color: black;
+}
+.panel-btn{
+  position: fixed;
+  z-index: 999;
+  bottom: 1vh;
+  right: 1vw;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(149, 240, 149);
 }

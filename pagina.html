@@ -7,31 +7,33 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav>
+    <header>
         <h1>Ejercicios del DOM</h1>
-    </nav>
+    </header>
+    <button id="hamburger" class="panel-btn hamburger hamburger--spring" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
     <main>
-        <section class="sections">
-            <h2 id="title">Sección 1</h2>
-        </section>
-        <section class="d-none opacity">
-            <ul>
-                <li class="Sección 1">Sección 1</li>
-                <li class="Sección 2">Sección 2</li>
-                <li class="Sección 3">Sección 3</li>
-                <li class="Sección 4">Sección 4</li>
-                <li class="Sección 5">Sección 5</li>
-                
-            </ul>
-        </section>
-        <section class="hamb">
-            <button id="hamburger" class="hamburger hamburger--spring" type="button">
-                <span class="hamburger-box">
-                  <span class="hamburger-inner"></span>
-                </span>
-              </button>
-        </section>
+        <aside class="panel ">
+            <nav class="menu">
+                <a href="#section1">Sección 1</a>
+                <a href="#section2">Sección 2</a>
+                <a href="#section3">Sección 3</a>
+                <a href="#section4">Sección 4</a>
+                <a href="#section5">Sección 5</a>
+            </nav>
+        </aside>
+        
+        <section id="section1">SECCIÓN 1</section>
+        <section id="section2">SECCIÓN 2</section>
+        <section id="section3">SECCIÓN 3</section>
+        <section id="section4">SECCIÓN 4</section>
+        <section id="section5">SECCIÓN 5</section>
+    
     </main>
-    <script src="hamburguer.js"></script>
+    <script src="hamburguer.js" type="module"></script>
+    <script src="index_dom.js" type="module"></script>
 </body>
 </html>
