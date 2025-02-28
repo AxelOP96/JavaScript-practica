@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios del DOM</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ejercicios del DOM</h1>
+    </header>
+    <button id="hamburger" class="panel-btn hamburger hamburger--spring" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    <main>
+        <aside class="panel ">
+            <nav class="menu">
+                <a href="#section1">Reloj Digital y Alarma Sonora</a>
+                <a href="#section2">Eventos del Teclado</a>
+                <a href="#section3">Countdown</a>
+                <a href="#section4">Sección 4</a>
+                <a href="#section5">Sección 5</a>
+            </nav>
+        </aside>
+        
+        <section id="section1">
+            <h2>Reloj Digital y Alarma Sonora</h2>
+            <audio class="sound" src="piano.mp3"></audio>
+            <p class="clock">
+
+            </p>
+            <div class="buttons">
+                <button class="start-c">Iniciar Reloj</button>
+                <button class="stop-c">Detener Reloj</button>
+                <button class="start-a">Iniciar Alarma</button>
+                <button class="stop-a">Detener Alarma</button>
+            </div>
+        </section>
+        <section id="section2">
+            <h2>Eventos del Teclado</h2>
+            <div class="area">
+                <div class="circle"></div>
+            </div>
+        </section>
+        <section id="section3">
+            <h2>Countdown</h2>
+            <div class="countdown">
+
+            </div>
+        </section>
+        <section id="section4">SECCIÓN 4</section>
+        <section id="section5">SECCIÓN 5</section>
+    
+    </main>
+    <script src="hamburguer.js" type="module"></script>
+    <script src="index_dom.js" type="module"></script>
+    <script src="clock.js" type="module"></script>
+    <script src="movement.js" type="module"></script>
+    <script src="countdown.js" type="module"></script>
+</body>
+</html>
