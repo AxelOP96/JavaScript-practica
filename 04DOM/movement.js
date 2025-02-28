@@ -21,5 +21,14 @@ export default function move(body){
                 positionX-=10;
                 d.querySelector(body).style.transform = `translate(${positionX}px,${positionY}px)`;
             }
+            if(e.altKey && e.key === 'a'){
+                alert("Activaste la alerta")
+            }
+            if(e.altKey && e.key === 'p'){
+                prompt("Activaste el prompt")
+            }
+            if(e.altKey && e.key === 'c'){
+                confirm("Activaste la confirmación")
+            }
     })
 }

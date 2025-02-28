@@ -1,6 +1,7 @@
 import alarm from "./alarm.js";
 import reloj from "./clock.js";
 import hamburgerMenu from "./hamburguer.js";
+import {atajos, move} from "./movement.js";
 /** */
 const d = document;
 d.addEventListener("DOMContentLoaded", (e) =>{
@@ -12,3 +13,7 @@ d.addEventListener("DOMContentLoaded", (e) =>{
 d.addEventListener("DOMContentLoaded", (e)=>{
     alarm(".start-a", ".stop-a", ".sound");
 })
+d.addEventListener("keydown", (e) =>{
+    move(".circle", ".area", e)
+    atajos(e)
+});
