@@ -205,3 +205,24 @@ nav a:hover{
   padding: 1rem;
   margin: auto;
 }
+.top{
+  position: fixed;
+  bottom: 1vh;
+  right: 7vw;
+  z-index: 998;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(149, 240, 149);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: none;
+}
+.top a{
+  text-decoration: none;
+}
