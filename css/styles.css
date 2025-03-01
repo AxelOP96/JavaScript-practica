@@ -208,7 +208,7 @@ nav a:hover{
 .top{
   position: fixed;
   bottom: 1vh;
-  right: 7vw;
+  right: calc(4.25rem + 1vw);
   z-index: 998;
   width: 4rem;
   height: 4rem;
@@ -221,8 +221,37 @@ nav a:hover{
   border: none;
   cursor: pointer;
   text-decoration: none;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 .top a{
   text-decoration: none;
+}
+.mode{
+  position: fixed;
+  bottom: 1vh;
+  left: 1vw;
+  z-index: 998;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(149, 240, 149);
+  border: none;
+  cursor: pointer;
+}
+.moon, .sun{
+  position: relative;
+  left:13px;
+  font-size: 25px;
+}
+.sun{
+  left:-15px;
+}
+.invisible{
+  visibility: hidden;
+  opacity: 0;
 }
