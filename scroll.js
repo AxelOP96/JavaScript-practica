@@ -7,6 +7,7 @@ export default function goTop(btnTop, first){
         let scrollTop = w.scrollY;
         if(scrollTop > 600){
             $scrollBtn.style.opacity = '1';
+            $scrollBtn.style.visibility = 'visible';
         }
         else{
             $scrollBtn.style.opacity = '0';
