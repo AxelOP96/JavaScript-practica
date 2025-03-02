@@ -266,3 +266,28 @@ nav a:hover{
 .hidden{
   display: none;
 }
+
+/**Responsive tester*/
+#form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+#form input{
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+}
+#submit{
+  background-color: rgb(169, 237, 169);
+  border: none;
+  outline: none;
+}
+#close{
+  background-color: rgb(246, 156, 123);
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
