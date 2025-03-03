@@ -170,7 +170,7 @@ nav a{
   text-transform: uppercase;
   font-size: large;
   color: yellow;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
 nav a:hover{
   background-color: yellow;
@@ -304,4 +304,17 @@ nav a:hover{
   z-index: 999;
   position: fixed;
   top: 0;
+}
+/*Detector de Cámara web*/
+#on ,#off{
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  cursor: pointer;
+  background-color: rgb(178, 243, 178);
+  font-weight: bold;
+}
+#off{
+  background-color: rgb(252, 131, 131);
 }

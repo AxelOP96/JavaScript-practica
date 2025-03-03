@@ -1,4 +1,5 @@
 import alarm from "./alarm.js";
+import activarCamara from "./camara.js";
 import reloj from "./clock.js";
 import detectorDeConexion from "./conexion.js";
 import finalCountdown from "./countdown.js";
@@ -21,7 +22,7 @@ d.addEventListener("DOMContentLoaded", (e) =>{
     responsive("maps", "(min-width:800px)", '<a href="https://maps.app.goo.gl/6gxhjwazxE5cjrSv8" target="_blank">Ver mapa</a>', `<iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73583.2604337712!2d-68.38520333870377!3d-54.80673630541112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbc4c22b5bad109bf%3A0x5498473dba43ebfc!2sV9410%20Ushuaia%2C%20Tierra%20del%20Fuego!5e0!3m2!1ses!2sar!4v1740876097126!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`);
     pruebaURL("URL", "#alto", "#ancho", "#submit", "#close");
     userAgent("navigation", "content");
-    detectorDeConexion("network");
+    activarCamara("webCamara", "#on", "#off");
 })
 d.addEventListener("DOMContentLoaded", (e) =>{
     reloj(".start-c", ".stop-c", ".clock")
@@ -34,3 +35,4 @@ d.addEventListener("keydown", (e) =>{
     atajos(e)
 });
 guardarModo(".sun" ,".moon");
+detectorDeConexion("network");
