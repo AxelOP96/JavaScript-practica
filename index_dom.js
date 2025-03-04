@@ -3,6 +3,7 @@ import activarCamara from "./camara.js";
 import reloj from "./clock.js";
 import detectorDeConexion from "./conexion.js";
 import finalCountdown from "./countdown.js";
+import obtenerUbicacion from "./geolocation.js";
 import hamburgerMenu from "./hamburguer.js";
 import guardarModo from "./local_storage.js";
 import changeMode from "./mode.js";
@@ -23,6 +24,7 @@ d.addEventListener("DOMContentLoaded", (e) =>{
     pruebaURL("URL", "#alto", "#ancho", "#submit", "#close");
     userAgent("navigation", "content");
     activarCamara("webCamara", "#on", "#off");
+    obtenerUbicacion("section9");
 })
 d.addEventListener("DOMContentLoaded", (e) =>{
     reloj(".start-c", ".stop-c", ".clock")
