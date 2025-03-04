@@ -153,7 +153,7 @@ section{
 }
 
 nav{
-  padding: 2rem;
+  padding: .2rem 1rem;
   width: inherit;
   display: flex;
   flex-direction: column;
@@ -164,13 +164,13 @@ nav{
 nav a{
   width: inherit;
   display: block;
-  font-size: 1.5rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
   text-decoration: none;
   text-transform: uppercase;
   font-size: large;
   color: yellow;
-  padding: 1.5rem 0;
+  padding: .9rem 0;
 }
 nav a:hover{
   background-color: yellow;
@@ -329,4 +329,14 @@ nav a:hover{
   width: 200px;
   height: 200px;
   border-radius: .5rem;
+}
+/*Sortear ganador*/
+#find-winner{
+  outline: none;
+  background-color: rgb(166, 248, 166);
+  font-weight: bold;
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
 }

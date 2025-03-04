@@ -6,6 +6,7 @@ import finalCountdown from "./countdown.js";
 import obtenerUbicacion from "./geolocation.js";
 import hamburgerMenu from "./hamburguer.js";
 import guardarModo from "./local_storage.js";
+import sortearGanador from "./lottery.js";
 import changeMode from "./mode.js";
 import {atajos, move} from "./movement.js";
 import pruebaURL from "./probar_URL.js";
@@ -27,6 +28,7 @@ d.addEventListener("DOMContentLoaded", (e) =>{
     activarCamara("webCamara", "#on", "#off");
     obtenerUbicacion("section9");
     filtrarBusqueda(".card", ".busqueda",e);
+    sortearGanador("#find-winner")
 })
 d.addEventListener("DOMContentLoaded", (e) =>{
     reloj(".start-c", ".stop-c", ".clock")
