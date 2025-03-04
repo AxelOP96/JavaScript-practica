@@ -11,6 +11,7 @@ import {atajos, move} from "./movement.js";
 import pruebaURL from "./probar_URL.js";
 import responsive from "./responsive.js";
 import goTop from "./scroll.js";
+import {cargarDescripcion, filtrarBusqueda} from "./search_bar.js";
 import userAgent from "./user_agents.js";
 /** */
 const d = document;
@@ -25,16 +26,19 @@ d.addEventListener("DOMContentLoaded", (e) =>{
     userAgent("navigation", "content");
     activarCamara("webCamara", "#on", "#off");
     obtenerUbicacion("section9");
+    filtrarBusqueda(".card", ".busqueda",e);
 })
 d.addEventListener("DOMContentLoaded", (e) =>{
     reloj(".start-c", ".stop-c", ".clock")
+    cargarDescripcion("container");
 })
 d.addEventListener("DOMContentLoaded", (e)=>{
     alarm(".start-a", ".stop-a", ".sound");
 })
 d.addEventListener("keydown", (e) =>{
-    move(".circle", ".area", e)
-    atajos(e)
+    move(".circle", ".area", e);
+    atajos(e);
+    
 });
 guardarModo(".sun" ,".moon");
 detectorDeConexion("network");

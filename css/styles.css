@@ -318,3 +318,15 @@ nav a:hover{
 #off{
   background-color: rgb(252, 131, 131);
 }
+/*Filtro de Búsqueda*/
+#container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+#container figure img{
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: .5rem;
+}

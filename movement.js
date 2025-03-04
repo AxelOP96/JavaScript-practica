@@ -7,7 +7,7 @@ export function move(body, area, e){
         $stage = d.querySelector(area),
         limitsBall = $ball.getBoundingClientRect(),
         limitsStage = $stage.getBoundingClientRect();
-        console.log(e.key);
+        
         switch(e.key){
             
             case  'ArrowUp':
