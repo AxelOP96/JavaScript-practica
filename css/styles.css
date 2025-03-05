@@ -176,6 +176,9 @@ nav a:hover{
   background-color: yellow;
   color: black;
 }
+nav a.is-active{
+  background-color: white;
+}
 .panel-btn{
   position: fixed;
   z-index: 999;
@@ -363,3 +366,4 @@ nav a:hover{
   font-size: 2rem;
   background-color: rgb(10, 164, 247);
 }
+/*Scroll Spy*/
