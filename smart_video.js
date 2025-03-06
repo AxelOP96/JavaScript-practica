@@ -2,20 +2,7 @@ const d = document;
 
 export default function playVideo(){
     const $videos = d.querySelectorAll("video[data-smart-video]");
-    console.log(d.visibilityState)
-
-    d.addEventListener("visibilitychange", e =>{
-        if(d.hidden){
-            $videos.forEach( (video) =>{
-                if(!video.paused) video.pause();
-            })
-        }     
-        if(!d.hidden){
-            $videos.forEach( (video) =>{
-                if(video.paused) video.play();
-            })
-        } 
-    })
+    
     const cb = (entries =>{
         entries.forEach((entry) =>{
             if(entry.isIntersecting){
@@ -23,6 +10,10 @@ export default function playVideo(){
             }else{
                 entry.target.pause();
             }
+
+            d.addEventListener("visibilitychange", e =>{
+                d.visibilityState==='visible' ? entry.target.play() : entry.target.pause();
+            })
         })
     })
 
