@@ -14,6 +14,7 @@ import responsive from "./responsive.js";
 import goTop from "./scroll.js";
 import {cargarDescripcion, filtrarBusqueda} from "./search_bar.js";
 import slider from "./slider.js";
+import playVideo from "./smart_video.js";
 import userAgent from "./user_agents.js";
 /** */
 const d = document;
@@ -30,7 +31,8 @@ d.addEventListener("DOMContentLoaded", (e) =>{
     obtenerUbicacion("section9");
     filtrarBusqueda(".card", ".busqueda",e);
     sortearGanador("#find-winner");
-    slider(".buttons-arrow")
+    slider(".buttons-arrow");
+    playVideo();
 })
 d.addEventListener("DOMContentLoaded", (e) =>{
     reloj(".start-c", ".stop-c", ".clock")

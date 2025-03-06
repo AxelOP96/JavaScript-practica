@@ -367,3 +367,10 @@ nav a.is-active{
   background-color: rgb(10, 164, 247);
 }
 /*Scroll Spy*/
+
+/*Smart video*/
+.videos{
+  display: flex;
+  flex-direction: column;
+  gap: 20rem;
+}
