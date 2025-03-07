@@ -421,3 +421,24 @@ input:invalid {
 .invalid{
   background-color: red;
 }
+/*Narrador*/
+.narrator{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.narrator *{
+  width:40%;
+  margin: auto;
+  padding: 1rem 2rem;
+}
+#start-reading{
+  background-color: rgb(179, 247, 179);
+  border: none;
+  border-radius: .5rem;
+  outline: none;
+  cursor: pointer;
+}
+#start-reading:hover{
+  color: green;
+}

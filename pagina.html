@@ -39,7 +39,7 @@
                 <a href="#section12">Responsive Slider</a>
                 <a href="#section13">Video inteligente</a>
                 <a href="#section14">Validación de Formularios</a>
-                <a href="#section15">Sección 15</a>
+                <a href="#section15">Narrador</a>
             </nav>
         </aside>
         
@@ -185,7 +185,16 @@
 
             </form>
         </section>
-        <section id="section15"><h2>Sección 15</h2></section>
+        <section id="section15">
+            <h2>Narrador</h2>
+            <div class="narrator">
+                <select name="speak-options" id="speak-options">
+                    <option value="">---Elige una voz---</option>
+                </select>
+                <textarea name="read" placeholder="Escribe el texto a leer" id="textToRead"></textarea>
+                <input id="start-reading" type="submit" value="Leer texto">
+            </div>
+        </section>
     </main>
     <script src="hamburguer.js" type="module"></script>
     <script src="index_dom.js" type="module"></script>

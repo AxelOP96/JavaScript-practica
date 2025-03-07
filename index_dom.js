@@ -10,6 +10,7 @@ import guardarModo from "./local_storage.js";
 import sortearGanador from "./lottery.js";
 import changeMode from "./mode.js";
 import {atajos, move} from "./movement.js";
+import speakText from "./narrator.js";
 import pruebaURL from "./probar_URL.js";
 import responsive from "./responsive.js";
 import goTop from "./scroll.js";
@@ -35,6 +36,7 @@ d.addEventListener("DOMContentLoaded", (e) =>{
     slider(".buttons-arrow");
     playVideo();
     sendForm();
+    
 })
 d.addEventListener("DOMContentLoaded", (e) =>{
     reloj(".start-c", ".stop-c", ".clock")
@@ -50,3 +52,4 @@ d.addEventListener("keydown", (e) =>{
 });
 guardarModo(".sun" ,".moon");
 detectorDeConexion("network");
+speakText("textToRead","start-reading");
