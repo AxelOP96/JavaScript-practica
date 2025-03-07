@@ -3,6 +3,7 @@ import activarCamara from "./camara.js";
 import reloj from "./clock.js";
 import detectorDeConexion from "./conexion.js";
 import finalCountdown from "./countdown.js";
+import sendForm from "./form.js";
 import obtenerUbicacion from "./geolocation.js";
 import hamburgerMenu from "./hamburguer.js";
 import guardarModo from "./local_storage.js";
@@ -33,6 +34,7 @@ d.addEventListener("DOMContentLoaded", (e) =>{
     sortearGanador("#find-winner");
     slider(".buttons-arrow");
     playVideo();
+    sendForm();
 })
 d.addEventListener("DOMContentLoaded", (e) =>{
     reloj(".start-c", ".stop-c", ".clock")

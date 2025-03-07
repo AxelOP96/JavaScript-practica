@@ -38,7 +38,7 @@
                 <a href="#section11">Sorteo Digital</a>
                 <a href="#section12">Responsive Slider</a>
                 <a href="#section13">Video inteligente</a>
-                <a href="#section14">Sección 14</a>
+                <a href="#section14">Validación de Formularios</a>
                 <a href="#section15">Sección 15</a>
             </nav>
         </aside>
@@ -152,16 +152,7 @@
                     <button id="next">➡️</button>
                 </div>
             </div>
-            <!-- <img src="assets/luffy.webp" alt="">
-                <img src="assets/zoro.webp" alt="">
-                <img src="assets/sanji.webp" alt="">
-                <img src="assets/usopp.webp" alt="">
-                <img src="assets/nami.webp" alt="">
-                <img src="assets/chopper.webp" alt="">
-                <img src="assets/robin.webp" alt="">
-                <img src="assets/franky.webp" alt="">
-                <img src="assets/jimbe.webp" alt="">
-                <img src="assets/loki.webp" alt=""> -->
+            
         </section>
         <section id="section13"><h2>Video inteligente</h2>
             <div class="videos">
@@ -170,7 +161,30 @@
             </div>
             
         </section>
-        <section id="section14"><h2>Sección 14</h2></section>
+        <section id="section14">
+            <h2>Validación de Formularios</h2>
+            <form action="" class="validation">
+                <legend><h3>Envianos tus comentarios</h3></legend>
+                <label for="name">
+                    <input name="name" id="name" type="text" placeholder="Escribe tu nombre" data-form-validation pattern="[a-z]{3,100}" required>
+                    <span class="check"></span>
+                </label>
+                <label for="mail">
+                    <input name="mail" id="mail" type="email" placeholder="Escribe tu email" data-form-validation pattern="^[a-z0-9]+(\.[a-z0-9]+)*@[a-z0-9]+(\.[a-z0-9]+)*(\.[a-z]{2,25})$" >
+                    <span class="check"></span>
+                </label>
+                <label for="subject">
+                    <input name="subject" id="subject" type="text" placeholder="Asunto a tratar" data-form-validation pattern="[a-z]{3,100}">
+                    <span class="check"></span>
+                </label>
+                <label for="comments">
+                    <textarea name="comments" id="comments" placeholder="Escribe tus comentarios" cols="25" rows="10" data-form-validation pattern="[a-z0-9]{3,255}"></textarea>
+                    <span class="check-length"></span>
+                </label>    
+                <input class="send-form" type="submit" value="Enviar">
+
+            </form>
+        </section>
         <section id="section15"><h2>Sección 15</h2></section>
     </main>
     <script src="hamburguer.js" type="module"></script>
@@ -190,5 +204,6 @@
     <script type="module" src="lottery.js"></script>
     <script type="module" src="slider.js"></script>
     <script type="module" src="smart_video.js"></script>
+    <script type="module" src="form.js"></script>
 </body>
 </html>
